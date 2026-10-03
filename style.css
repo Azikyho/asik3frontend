@@ -1,9 +1,10 @@
 body {
     margin: 0;
     padding: 0;
+
 }
 
-.container {
+.page-container {
     display: grid;
     grid-template-rows: 100px auto auto;
     grid-template-areas:
@@ -18,42 +19,53 @@ body {
     background: #232323;
     padding: 0 20px;
     justify-content: space-between;
-    color: #ffffff;
+    align-items: center;
+    color: white;
+}
+
+/* Вот это добавляем */
+.main-content {
+    grid-area: main;
 }
 
 .main {
-    grid-area: main;
     display: flex;
     background: #dedede;
-    padding: 20px;
+    padding: 10px;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .footer {
     grid-area: footer;
     display: flex;
     background: #000000;
+    color: white;
     padding: 20px;
     justify-content: center;
 }
 
+/* DESKTOP */
 .box {
-    background: #ffffff;
-    width: 33.3%;
+    background: white;
+    width: calc(33.33% - 14px);
     height: 300px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
+/* TABLET */
+@media (max-width: 1024px) {
     .box {
-        width: 50%;
+        width: calc(50% - 10px);
     }
 }
 
-@media (max-width: 768px) {
+/* MOBILE */
+@media (max-width: 600px) {
     .box {
         width: 100%;
     }
@@ -67,14 +79,44 @@ h2 {
     font-size: 24px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
     h2 {
         font-size: 32px;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
     h2 {
         font-size: 40px;
     }
+}
+
+.bootstrap-box {
+    background: white;
+    min-height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid {
+    background: #dedede;
+    padding: 10px;
+}
+
+.navbarr {
+    padding: 20px;
+}
+
+.navbarr .navbar {
+    border-radius: 10px;
+}
+
+.navbarr .navbar-collapse {
+    background-color: #212529;
+}
+
+.navbarr .nav-link {
+    color: white;
+    padding: 10px 15px;
 }
